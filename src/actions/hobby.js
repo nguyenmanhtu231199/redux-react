@@ -6,7 +6,7 @@ return {
 };
 export const setNewHobby = (hobby)=>{
     return {
-        type : 'SETING',
+        type : 'SETTING',
         payload : hobby,
     }
 }

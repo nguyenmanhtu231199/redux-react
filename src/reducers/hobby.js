@@ -4,7 +4,7 @@ const initialState = {
 }
 const hobbyResucer = (state=initialState, action) =>{
 switch (action.type){
-    case 'ADD ' :{
+    case 'ADD' :{
         const newList=[...state.list]
         newList.push(action.payload);
 
@@ -15,7 +15,7 @@ switch (action.type){
         ;
     }
    
-    case 'SETING':{
+    case 'SETTING':{
      return state;
     }
    

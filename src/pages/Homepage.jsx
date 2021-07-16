@@ -5,9 +5,7 @@ import { useState } from 'react';
 import { addNewHobby } from '../actions/hobby';
 
 
-Homepage.propTypes = {
-    
-};
+Homepage.propTypes = {};
 
 function Homepage(props) {
     const hobbyList = useSelector(state => state.hobby.list);
@@ -17,10 +15,10 @@ function Homepage(props) {
     function handleOnclickAdd() {
         const newHobby={
             id: Date.now(),
-            tittle: input,
+            title: input,
         }
-        const action = addNewHobby(newHobby)
-        dispatch(action);
+        const action = addNewHobby(newHobby);
+        dispatch(addNewHobby(newHobby));
     };
     return (
         <div>
