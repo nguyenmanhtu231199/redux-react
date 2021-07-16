@@ -12,7 +12,7 @@ HobbyList.defaultProps= {
 }
 
 function HobbyList(props) {
-    const {hobbyList,hobbyId} = props;
+    const {hobbyList} = props;
     return (
        <ul>
            {hobbyList.map(hobby =>{
