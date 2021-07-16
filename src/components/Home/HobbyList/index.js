@@ -1,23 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './style.css';
 
 HobbyList.propTypes = {
     hobbyList :PropTypes.array,
-    hobbyId: PropTypes.number,
-    
+   activeId: PropTypes.number,
+    onHobbyClick :PropTypes.func,
 };
 HobbyList.defaultProps= {
     hobbyList : [],
-    hobbyId: null,
+    activeId: null,
+    onHobbyClick:null,
 }
 
 function HobbyList(props) {
-    const {hobbyList} = props;
+    const {hobbyList,activeId,onHobbyClick} = props;
+    const handleClick=(hobby)=>{
+        if(onHobbyClick){
+            onHobbyClick(hobby)
+        }
+    }
     return (
-       <ul>
+       <ul className="hobby-list">
            {hobbyList.map(hobby =>(
                <li 
                key={hobby.id}
+               className={hobby.id===activeId ? 'active':''}
+               onClick={()=>handleClick(hobby)}
                >
                 {hobby.title}
                </li>

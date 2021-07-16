@@ -1,0 +1,6 @@
+.hobby-list{
+
+}
+ul.hobby-list>li.active{
+    text-decoration: line-through;
+}

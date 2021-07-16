@@ -1,6 +1,6 @@
 const initialState = {
     list: [],
-    actionId : null, 
+    activeId : null, 
 }
 const hobbyResucer = (state=initialState, action) =>{
 switch (action.type){
@@ -16,7 +16,12 @@ switch (action.type){
     }
    
     case 'SETTING':{
-     return state;
+        const newActiveId=action.payload.id;
+
+     return {
+         ...state,
+         activeId : newActiveId,
+     };
     }
    
     default:
